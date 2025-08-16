@@ -10,11 +10,11 @@ on:
 jobs:
   sonarqube:
     name: SonarQube Analysis
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
@@ -23,32 +23,13 @@ jobs:
   build-and-deploy:
     name: Build & Deploy to Netlify
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' 
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      - name: Cache npm dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Netlify Next.js Plugin
-        run: npm install -D @netlify/plugin-nextjs
-
       - name: Deploy to Netlify
-        run: npx netlify-cli deploy --build --prod --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
+        run: npx netlify-cli deploy --dir= --prod --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
