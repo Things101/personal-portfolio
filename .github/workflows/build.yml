@@ -20,16 +20,39 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-  build-and-deploy:
-    name: Build & Deploy to Netlify
+  deploy-prod:
+    name: Deploy to Netlify (Production)
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Deploy to Netlify
         run: npx netlify-cli deploy --dir=public --prod --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+  deploy-preview:
+    name: Deploy to Netlify (Preview)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy Preview to Netlify
+        id: netlify
+        run: |
+          DEPLOY_URL=$(npx netlify-cli deploy --dir=public --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID | grep -o 'https://[^ ]*.netlify.app')
+          echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
+          echo "Preview URL: $DEPLOY_URL"
+
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Comment PR with Preview URL
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: netlify-preview
+          message: |
+            ${{ env.DEPLOY_URL }}
