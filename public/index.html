@@ -22,13 +22,12 @@
   <body>
     <nav class="nav">
       <ul class="nav__list">
-
         <li>
           <a href="#home" title="Home" class="nav__link">
             <i class="ri-home-line"></i>
           </a>
         </li>
-        
+
         <li>
           <a href="#projects" title="Projects" class="nav__link">
             <i class="ri-folder-line"></i>
@@ -36,7 +35,11 @@
         </li>
 
         <li>
-          <a href="#currently-learning" title="Currently Learning" class="nav__link">
+          <a
+            href="#currently-learning"
+            title="Currently Learning"
+            class="nav__link"
+          >
             <i class="ri-file-edit-line"></i>
           </a>
         </li>
@@ -46,19 +49,209 @@
             <i class="ri-honour-line"></i>
           </a>
         </li>
-        
+
         <li>
           <a href="contact" title="Contact" class="nav__link">
             <i class="ri-send-plane-line"></i>
           </a>
         </li>
-
       </ul>
     </nav>
 
+    <!-- Main -->
     <main class="main">
+      <!-- Home -->
       <section class="home section" id="home">
-        <div class="home__container container grid"></div>
+        <div class="home__container container grid">
+          <div class="perfil">
+            <img
+              src="assets/img/home-perfil.jpg"
+              alt="image"
+              class="perfil__img"
+            />
+
+            <div class="perfil__data">
+              <h1 class="perfil__name">
+                Irwin <br />
+                Jiang
+              </h1>
+              <div class="perfil__buttons">
+                <a href="#projects" class="button">Projects</a>
+                <a href="#currently-learning" class="button button__black"
+                  >Currently Learning</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="info__data">
+              <div class="info__circle"></div>
+              <h1 class="info__name">Irwin Jiang</h1>
+            </div>
+
+            <div class="info__image">
+              <img
+                src="assets/img/home-perfil.jpg"
+                alt="image"
+                class="info__img"
+              />
+            </div>
+
+            <p class="info__description">
+              I am a software engineer with a passion for developing and
+              creating applications. I love to learn new technologies and apply
+              them to real-world problems.
+            </p>
+
+            <a
+              href="assets/pdf/"
+              download
+              target="_blank"
+              class="button button__black"
+              >Download CV</a
+            >
+          </div>
+
+          <div class="about">
+            <h3 class="about__name">
+              Irwin Jiang - <b>CS + Econ @ University of Pittsburgh</b>
+            </h3>
+
+            <p class="about_description">
+              I am currently a student at the University of Pittsburgh, pursuing
+              a CS major and a Econmics minor. Currently, I am learning about
+              buliding ML models and working about LLM APIs.
+            </p>
+
+            <div class="about__social">
+              <a
+                href="https://www.linkedin.com/in/irwin-jiang/"
+                target="_blank"
+                class="about__link"
+              >
+                <i class="ri-linkedin-box-line"></i>
+              </a>
+
+              <a
+                href="https://github.com/Things101"
+                target="_blank"
+                class="about__link"
+              >
+                <i class="ri-github-line"></i>
+              </a>
+            </div>
+
+            <div class="about__image">
+              <img
+                src="assets/img/home-perfil.jpg"
+                alt="image"
+                class="about__img"
+              />
+            </div>
+
+            <p class="about__note">Feel feel to reach out to me</p>
+
+            <a href="#contact" class="button"> Contact Me </a>
+          </div>
+
+          <div class="skills">
+            <h2 class="skills__title">Skills</h2>
+
+            <div class="skills__items">
+              <img
+                src="assets/img/skills-angular.svg"
+                alt="Angular"
+                class="skills_item"
+              />
+              <img src="assets/img/skills-c.svg" alt="C" class="skills_item" />
+              <img
+                src="assets/img/skills-css.svg"
+                alt="CSS"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-git.svg"
+                alt="Git"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-github.svg"
+                alt="GitHub"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-google-cloud.svg"
+                alt="Google Cloud"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-html.svg"
+                alt="HTML"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-java.svg"
+                alt="Java"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-javascript.svg"
+                alt="JavaScript"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-nodejs.svg"
+                alt="Node.js"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-python.svg"
+                alt="Python"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-react.svg"
+                alt="React"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-rust.svg"
+                alt="Rust"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-sonarcloud.svg"
+                alt="SonarCloud"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-spring.svg"
+                alt="Spring"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-springboot.svg"
+                alt="Spring Boot"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-tailwind-css.svg"
+                alt="Tailwind CSS"
+                class="skills_item"
+              />
+              <img
+                src="assets/img/skills-typescript.svg"
+                alt="TypeScript"
+                class="skills_item"
+              />
+            </div>
+
+            <p class="skills_description">
+              Visit resume to see comphrehensive list of skills
+            </p>
+          </div>
+        </div>
       </section>
 
       <section class="projects section" id="projects"></section>
