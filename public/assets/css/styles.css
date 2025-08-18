@@ -260,17 +260,15 @@ img {
 
 .skills__title {
   font-size: var(--h2-font-size);
-
 }
 
 .skills_item {
   width: 1.5rem;
-  transition: transform .4s;
-
+  transition: transform 0.4s;
 }
 
 .skills_item:hover {
-  transform: translateY(-.25rem);
+  transform: translateY(-0.25rem);
 }
 
 .skills__items {
@@ -371,12 +369,12 @@ img {
 }
 
 .projects__img {
-  transition: transform .4s;
+  transition: transform 0.4s;
 }
 
 .projects__name {
   font-size: var(--h3-font-size);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .projects__description {
@@ -386,21 +384,21 @@ img {
 
 .project__skill {
   width: 1rem;
-  transition: transform .4s;
+  transition: transform 0.4s;
 }
 
 .project__skill:hover {
-  transform: translateY(-.25rem);
+  transform: translateY(-0.25rem);
 }
 
 .projects__skills {
   width: max-content;
   height: 34px;
   background-color: var(--black-color);
-  padding-inline: .75rem;
+  padding-inline: 0.75rem;
   display: flex;
   align-items: center;
-  column-gap: .75rem;
+  column-gap: 0.75rem;
   border-radius: 4rem;
   margin-bottom: 1.5rem;
 }
@@ -409,9 +407,8 @@ img {
   color: var(--white-color);
   display: ineline-flex;
   align-items: center;
-  column-gap: .5rem;
-  transition: color .4s;
-
+  column-gap: 0.5rem;
+  transition: color 0.4s;
 }
 
 .projects__button i {
@@ -428,7 +425,7 @@ img {
 
 .projects__card:hover .projects__img {
   transform: scale(1.2);
-} 
+}
 
 .learning__card {
   background-color: var(--container-color);
@@ -456,7 +453,7 @@ img {
   position: absolute;
   top: -1rem;
   right: -1rem;
-  transition: transform .4s;
+  transition: transform 0.4s;
 }
 
 .learning__name {
@@ -469,5 +466,41 @@ img {
 }
 
 .learning__card:hover .learning__circle {
-  transform: translate(.25rem, -.25rem);
+  transform: translate(0.25rem, -0.25rem);
 }
+
+.experience__container {
+  row-gap: 2rem;
+}
+
+.experience__card {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.experience__company {
+  font-size: var(--h2-font-size);
+}
+
+.experience__data {
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.experience__profession {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.experience__date {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 1rem;
+}
+
+.experience__description {
+  color: var(--text-color);
+}
+
+
