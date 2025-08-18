@@ -428,4 +428,46 @@ img {
 
 .projects__card:hover .projects__img {
   transform: scale(1.2);
+} 
+
+.learning__card {
+  background-color: var(--container-color);
+  padding: 4rem 1.5rem 3.5rem 1.5rem;
+  border-radius: 2rem;
+}
+
+.learning__icon {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.learning__icon i {
+  font-size: 2.5rem;
+  position: relative;
+  z-index: var(--z-tooltip);
+}
+
+.learning__circle {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  transition: transform .4s;
+}
+
+.learning__name {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+}
+
+.learning__description {
+  color: var(--text-color);
+}
+
+.learning__card:hover .learning__circle {
+  transform: translate(.25rem, -.25rem);
 }
