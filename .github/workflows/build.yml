@@ -47,10 +47,3 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
-      - name: Comment PR with Preview URL
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          header: netlify-preview
-          message: |
-            ${{ env.DEPLOY_URL }} 
