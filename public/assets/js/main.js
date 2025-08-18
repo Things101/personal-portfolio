@@ -29,3 +29,16 @@ const scrollActive = () => {
 };
 
 window.addEventListener("scroll", scrollActive);
+
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 2500,
+  delay: 400,
+});
+
+sr.reveal(`.perfil`);
+sr.reveal(`.info`, { origin: "left", delay: 400 });
+sr.reveal(`.skills`, { origin: "left", delay: 500 });
+sr.reveal(`.about`, { origin: "right", delay: 600 });
+sr.reveal(`.projects__card, .learning__card,  .experience__card`, { interval: 75 });
