@@ -133,7 +133,7 @@ img {
   width: 88%;
   margin-inline: auto;
   backdrop-filter: blur(16px);
-  --webkit-backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   padding: 1rem 2rem;
   border-radius: 4rem;
   z-index: var(--z-fixed);
@@ -161,7 +161,7 @@ img {
 
 .perfil {
   position: relative;
-  background: var(--conic-gradient);
+  background: var(--container-color);
   height: 415px;
   border-radius: 2rem;
   padding: 1rem;
@@ -180,7 +180,7 @@ img {
   align-self: flex-end;
   background-color: hsla(0, 0%, 1%, 0.1);
   backdrop-filter: blur(16px);
-  --webkit-backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   padding: 1.5rem 1rem;
   border-radius: 1.5rem;
   border: 2px solid hsla(0, 0%, 100%, 0.5);
@@ -195,10 +195,6 @@ img {
   display: grid;
   column-gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
-}
-
-.perfil__buttons .button {
-  padding: 0.75rem 0;
 }
 
 .info,
@@ -353,6 +349,10 @@ img {
 
 .button:hover {
   background-color: var(--first-color-alt);
+}
+
+.perfil__buttons .button {
+  padding: 0.75rem 0;
 }
 
 .projects__card {
@@ -527,18 +527,18 @@ img {
 }
 
 ::-webkit-scrollbar {
-  width: .6rem;
+  width: 0.6rem;
   background-color: hsl(0, 0%, 20%);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
-   background-color: hsl(0, 0%, 30%);
-  border-radius: .5rem;
+  background-color: hsl(0, 0%, 30%);
+  border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-   background-color: hsl(0, 0%, 40%);
+  background-color: hsl(0, 0%, 40%);
 }
 
 .scrollup {
@@ -552,9 +552,9 @@ img {
   font-size: 1.25rem;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   z-index: var(--z-tooltip);
-  transition: bottom .4s, transform .4s;
+  transition: bottom 0.4s, transform 0.4s;
 }
 
 .scrollup:hover {
@@ -567,5 +567,230 @@ img {
 
 .active-link {
   background-color: var(--first-color);
-  
+}
+
+.image-left {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.image-right {
+  margin-top: 3rem;
+}
+
+.image-center {
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-wdith: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .nav {
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .nav {
+    width: max-content;
+  }
+
+  .nav__list {
+    column-gap: 1.25rem;
+  }
+
+  .home__container,
+  .projects__container,
+  .learning__container {
+    grid-template-columns: 330px;
+    justify-content: center;
+  }
+
+  .perfil__buttons .button {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__container {
+    grid-template-columns: repeat(2, 350px);
+    align-items: flex-start;
+  }
+
+  .perfil {
+    height: 100%;
+  }
+
+  .projects__container,
+  .learning__container {
+    grid-template-columns: repeat(2, 350px);
+  }
+
+  .experience__container {
+    grid-template-columns: initial;
+    justify-content: center;
+  }
+
+  .experience__card {
+    grid-template-columns: 320px 380px;
+    align-items: center;
+  }
+
+  .perfil__buttons .button {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: 3rem 4rem;
+  }
+
+  .section__title {
+    font-size: var(--h1-font-size);
+    margin-bottom: 4rem;
+  }
+
+  .home__container {
+    grid-template-columns: 250px 560px 280px;
+    align-items: stretch;
+  }
+
+  .perfil {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    padding: 2rem;
+  }
+
+  .perfil__img {
+    width: 450px;
+  }
+
+  .perfil__data {
+    width: 370px;
+    padding: 1.5rem;
+    border-radius: 2rem;
+  }
+
+  .info {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .info__name {
+    font-size: var(--h2-font-size);
+  }
+
+  .about {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    align-content: center;
+  }
+
+  .about__image {
+   height: 210px; 
+  }
+
+  .about__img {
+    transform: translateY(-1rem);
+  }
+
+  .skills {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .skills__title {
+    font-size: var(--h3-font-size);
+  }
+
+  .projects__container {
+    grid-template-columns: repeat(3, 368px);
+    gap: 2rem;
+  }
+
+  .projects__card { 
+    padding-bottom: 2rem;
+  }
+
+  .learning__container {
+    grid-template-columns: repeat(3, 368px);
+    gap: 2rem;
+  }
+
+  .learning__card {
+    padding-block: 6rem 5rem;
+  }
+
+  .learning__icon i {
+    font-size: 3.5rem
+  }
+
+  .learning__circle {
+    width: 4rem;
+    height: 4rem;
+    right: -1.5rem;
+    top: -1.5rem;
+  }
+
+  .experience__container {
+    row-gap: 4rem;
+    justify-content: center;
+  }
+
+  .experience__card {
+    grid-template-columns: 350px 510px;
+    column-gap: 8rem;
+  }
+
+  .experience__compnay {
+    font-size: var(--h1-font-size);
+  }
+
+  .experience__data {
+    padding: 2rem;
+    border-radius: 2rem;
+  }
+
+  .footer {
+    padding-top: 3rem;
+  }
+
+  .footer__links {
+    column-gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .nav {
+    width: max-content;
+    height: max-content;
+    padding: 2rem 1rem;
+    left: initial;
+    right: 3rem;
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    row-gap: 1.25rem;
+  }
+
+  .footer {
+    padding-block: 3rem;
+  }
+
+  .scrollup{
+    right: 4rem;
+  }
 }
