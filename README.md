@@ -6,3 +6,7 @@
 - Contains a dark theme.
 - Developed first with the Mobile First methodology, then for desktop.
 - Compatible with all mobile devices
+
+### Potential Additions
+-Add some selenium test cases to complete full development loop
+-Additional projects after working with AI/ML
