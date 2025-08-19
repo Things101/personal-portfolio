@@ -8,5 +8,5 @@
 - Compatible with all mobile devices
 
 ### Potential Additions
--Add some selenium test cases to complete full development loop
--Additional projects after working with AI/ML
+- Add some selenium test cases to complete full development loop
+- Additional projects after working with AI/ML
